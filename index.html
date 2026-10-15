@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Asma Ajmi — Ingénieure Logiciel / Développeuse Backend Java &amp; Spring Boot</title>
+<meta name="description" content="Portfolio d'Asma Ajmi, ingénieure logiciel spécialisée en développement backend Java / Spring Boot : microservices, DDD, CQRS, architecture hexagonale, solutions bancaires et assurantielles." />
+<meta name="author" content="Asma Ajmi" />
+<meta property="og:title" content="Asma Ajmi — Ingénieure Logiciel Backend" />
+<meta property="og:description" content="Java · Spring Boot · Microservices · DDD · CQRS · Architecture hexagonale" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#accueil" class="brand">
+      <span class="brand-mark">AA</span>
+      <span class="brand-text">Asma&nbsp;Ajmi<em>Software Engineer</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#profil"><span class="nav-num">01</span>Profil</a></li>
+        <li><a href="#experience"><span class="nav-num">02</span>Expérience</a></li>
+        <li><a href="#projets"><span class="nav-num">03</span>Projets</a></li>
+        <li><a href="#competences"><span class="nav-num">04</span>Compétences</a></li>
+        <li><a href="#formation"><span class="nav-num">05</span>Formation</a></li>
+        <li><a href="#contact"><span class="nav-num">06</span>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-sm btn-primary header-cta" href="#contact">Me contacter</a>
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="accueil">
+  <span class="hero-dots" aria-hidden="true"></span>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot"></span> Disponible — PFE / poste d'ingénieure backend</p>
+
+      <h1>
+        <span class="h1-line">Asma</span>
+        <span class="h1-line h1-accent">Ajmi</span>
+      </h1>
+
+      <p class="hero-role">
+        Ingénieure Logiciel · <mark>Software Engineer</mark><br />
+        <span class="hero-stack">Java &nbsp;/&nbsp; Spring Boot &nbsp;/&nbsp; Microservices</span>
+      </p>
+
+      <p class="hero-lede">
+        Plus de 3 ans à concevoir des solutions digitales pour les secteurs
+        <strong>bancaire</strong> et <strong>assurantiel</strong> : API REST, plateformes
+        multi-tenant, DDD et architecture hexagonale.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projets">
+          Voir mes projets
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="assets/CV-Asma-Ajmi.pdf" download>
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19h14"/></svg>
+          Télécharger le CV
+        </a>
+      </div>
+
+      <ul class="hero-meta">
+        <li><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> Messadine, Sousse 4013 — Tunisie</li>
+        <li><a href="mailto:asmaajmi237@gmail.com"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> asmaajmi237@gmail.com</a></li>
+        <li><a href="tel:+21629721205"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg> +216 29 721 205</a></li>
+      </ul>
+    </div>
+
+    <!-- ---- EMPLACEMENT PHOTO DE PROFIL ---- -->
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <span class="frame-block" aria-hidden="true"></span>
+        <span class="frame-dots" aria-hidden="true"></span>
+        <div class="photo-holder">
+          <img id="profilePhoto"
+               src="assets/asma_photo.jpg"
+               alt="Portrait d'Asma Ajmi"
+               width="480" height="560"
+               onerror="this.onerror=null;this.src='assets/profile-placeholder.svg';document.querySelector('.photo-frame').classList.add('no-photo');" />
+        </div>
+
+        <div class="photo-badge">
+          <b>3<span>+</span></b>
+          <span class="pb-text">ans<br />d'expérience</span>
+        </div>
+
+        <div class="photo-tag" aria-hidden="true">
+          <span class="tag-dot"></span> Java · Spring Boot
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="hero-stats">
+      <li><b>5</b><span>projets majeurs livrés</span></li>
+      <li><b>6+</b><span>institutions financières</span></li>
+      <li><b>2</b><span>entreprises · Proxym IT, For Right Solution</span></li>
+      <li><b>3</b><span>langues de travail</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MARQUEE TECHNO ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>Microservices</span><i>◆</i><span>DDD</span><i>◆</i><span>CQRS</span><i>◆</i><span>Architecture Hexagonale</span><i>◆</i><span>PostgreSQL</span><i>◆</i><span>Oracle</span><i>◆</i><span>Redis</span><i>◆</i><span>Elasticsearch</span><i>◆</i><span>Keycloak</span><i>◆</i><span>Docker</span><i>◆</i><span>Kubernetes</span><i>◆</i><span>GitLab CI/CD</span><i>◆</i>
+    <span>Java</span><i>◆</i><span>Spring Boot</span><i>◆</i><span>Microservices</span><i>◆</i><span>DDD</span><i>◆</i><span>CQRS</span><i>◆</i><span>Architecture Hexagonale</span><i>◆</i><span>PostgreSQL</span><i>◆</i><span>Oracle</span><i>◆</i><span>Redis</span><i>◆</i><span>Elasticsearch</span><i>◆</i><span>Keycloak</span><i>◆</i><span>Docker</span><i>◆</i><span>Kubernetes</span><i>◆</i><span>GitLab CI/CD</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ============ PROFIL ============ -->
+<section class="section" id="profil">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">01</span>
+      <h2>Profil</h2>
+      <p class="section-sub">Qui je suis et comment je travaille</p>
+    </header>
+
+    <div class="profil-grid">
+      <div class="profil-text reveal">
+        <p class="lead-para">
+          Ingénieure logiciel spécialisée en <strong>développement backend</strong>, je conçois depuis plus de
+          trois ans des solutions digitales destinées aux domaines <strong>bancaire</strong> et
+          <strong>assurantiel</strong>.
+        </p>
+        <p>
+          Actuellement en dernière année d'alternance dans le cadre de mon <strong>Projet de Fin d'Études</strong>,
+          je travaille principalement avec <strong>Java</strong> et <strong>Spring Boot</strong>, en m'appuyant sur
+          les principes du <strong>Domain-Driven Design</strong> et de l'<strong>architecture hexagonale</strong>.
+        </p>
+        <p>
+          J'ai une expérience concrète des architectures <strong>microservices</strong>, des <strong>API
+          RESTful</strong> et des solutions <strong>multi-tenant</strong> capables d'évoluer avec les besoins
+          métiers. Sensible à la qualité logicielle, j'accorde une attention particulière au
+          <strong>clean code</strong>, au <strong>TDD</strong> et aux méthodes de travail <strong>agiles</strong>.
+        </p>
+
+        <a class="text-link" href="#contact">
+          Travaillons ensemble
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+        </a>
+      </div>
+
+      <div class="code-card reveal">
+        <div class="code-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="chip">AsmaAjmi.java</span>
+        </div>
+        <pre class="code"><code><span class="k">public class</span> <span class="t">AsmaAjmi</span> <span class="k">implements</span> <span class="t">BackendEngineer</span> {
+
+  <span class="k">private final</span> <span class="t">Stack</span> stack = <span class="t">Stack</span>.of(
+      <span class="s">"Java"</span>, <span class="s">"Spring Boot"</span>, <span class="s">"PostgreSQL"</span>,
+      <span class="s">"Redis"</span>, <span class="s">"Elasticsearch"</span>, <span class="s">"Keycloak"</span>,
+      <span class="s">"Docker"</span>, <span class="s">"Kubernetes"</span>);
+
+  <span class="c">// DDD · CQRS · Hexagonale · TDD</span>
+  <span class="k">public</span> <span class="t">Solution</span> <span class="f">build</span>(<span class="t">BusinessNeed</span> need) {
+      <span class="k">return</span> design(need)
+              .cleanCode()
+              .tested()
+              .shipped();
+  }
+}</code></pre>
+      </div>
+    </div>
+
+    <ul class="pillars">
+      <li class="reveal">
+        <span class="pillar-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </span>
+        <h3>Architecture</h3>
+        <p>DDD, CQRS, hexagonale, microservices orientés événements.</p>
+      </li>
+      <li class="reveal">
+        <span class="pillar-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 17l5-5-5-5"/><path d="M12 19h8"/></svg>
+        </span>
+        <h3>Qualité de code</h3>
+        <p>TDD, tests unitaires et d'intégration, revues de code, clean code.</p>
+      </li>
+      <li class="reveal">
+        <span class="pillar-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-4z"/><path d="M9.2 12.2l2 2 3.6-3.8"/></svg>
+        </span>
+        <h3>Sécurité</h3>
+        <p>OAuth2 / OIDC avec Keycloak, accès en contexte multi-tenant.</p>
+      </li>
+      <li class="reveal">
+        <span class="pillar-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 12a9 9 0 0 1 15.5-6.2"/><path d="M21 12a9 9 0 0 1-15.5 6.2"/><path d="M18 3v3.5h-3.5"/><path d="M6 21v-3.5h3.5"/></svg>
+        </span>
+        <h3>Performance</h3>
+        <p>Cache Redis, indexation Elasticsearch, optimisation des accès données.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section section-alt" id="experience">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">02</span>
+      <h2>Expérience professionnelle</h2>
+      <p class="section-sub">Du fullstack ERP au backend bancaire d'entreprise</p>
+    </header>
+
+    <ol class="timeline">
+      <li class="tl-item reveal">
+        <div class="tl-rail">
+          <span class="tl-year">2023<em>→</em></span>
+          <span class="tl-marker" aria-hidden="true"></span>
+        </div>
+        <div class="tl-card">
+          <div class="tl-top">
+            <div>
+              <h3>Développeuse Backend</h3>
+              <p class="tl-org"><span class="org-mark" aria-hidden="true"></span> Proxym IT — Sousse</p>
+            </div>
+            <span class="badge badge-live">Sept 2023 — Présent</span>
+          </div>
+          <ul class="bullets">
+            <li>Développement et évolution de <strong>solutions bancaires d'entreprise</strong> en Java et Spring Boot, en appliquant les principes <strong>DDD, CQRS</strong> et d'<strong>architecture hexagonale</strong>.</li>
+            <li>Contribution à des plateformes bancaires <strong>corporate et retail</strong> destinées à plusieurs institutions financières, avec une approche orientée <strong>scalabilité</strong> et <strong>multi-tenant</strong>.</li>
+            <li>Mise en œuvre de l'authentification et de l'autorisation <strong>OAuth2 / OIDC avec Keycloak</strong>, ainsi que de connecteurs vers des systèmes bancaires centraux tels que <strong>Sopra</strong>.</li>
+            <li>Développement d'<strong>API REST</strong> et de composants métier configurables.</li>
+            <li>Travail au sein d'équipes <strong>Agile</strong> pluridisciplinaires : cycles de développement, revues de code et livraisons régulières.</li>
+          </ul>
+          <div class="tags">
+            <span>Java</span><span>Spring Boot</span><span>DDD</span><span>CQRS</span><span>Keycloak</span><span>Microservices</span>
+          </div>
+        </div>
+      </li>
+
+      <li class="tl-item reveal">
+        <div class="tl-rail">
+          <span class="tl-year">2023</span>
+          <span class="tl-marker" aria-hidden="true"></span>
+        </div>
+        <div class="tl-card">
+          <div class="tl-top">
+            <div>
+              <h3>Développeuse Fullstack</h3>
+              <p class="tl-org"><span class="org-mark" aria-hidden="true"></span> For Right Solution — Sfax</p>
+            </div>
+            <span class="badge">Fév 2023 — Juin 2023</span>
+          </div>
+          <ul class="bullets">
+            <li>Développement de <strong>modules ERP</strong> avec PHP Laravel et JavaScript pour la gestion d'activités industrielles.</li>
+            <li>Conception d'<strong>API REST</strong> et de services backend, ainsi que d'interfaces web adaptées aux différents usages métier.</li>
+            <li>Modélisation des données et développement de la logique applicative pour les fonctionnalités <strong>RH</strong> et de <strong>suivi de production</strong>.</li>
+            <li>Travail en équipe selon la méthodologie <strong>Agile / SCRUM</strong>, de la planification des sprints jusqu'à la livraison des fonctionnalités.</li>
+          </ul>
+          <div class="tags">
+            <span>PHP</span><span>Laravel</span><span>JavaScript</span><span>SQL Server</span><span>SCRUM</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PROJETS ============ -->
+<section class="section" id="projets">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">03</span>
+      <h2>Projets</h2>
+      <p class="section-sub">Réalisations déployées pour des institutions financières</p>
+    </header>
+
+    <div class="filters reveal" aria-label="Filtrer les projets">
+      <button class="filter is-active" data-filter="all" type="button">Tous <em>5</em></button>
+      <button class="filter" data-filter="bancaire" type="button">Bancaire <em>3</em></button>
+      <button class="filter" data-filter="backend" type="button">Backend / API <em>4</em></button>
+      <button class="filter" data-filter="erp" type="button">ERP <em>1</em></button>
+    </div>
+
+    <div class="projects" id="projects">
+
+      <article class="p-card reveal" data-cat="bancaire backend">
+        <figure class="p-shot" style="height:300px;">
+          <img src="assets/projects/coris.png" alt="Écran d'accueil du tableau de bord MyCoris Bank Corporate"
+               width="880" height="850" loading="lazy" style="object-fit:contain; object-position:center center;" />
+        </figure>
+        <div class="p-head">
+          <span class="p-index">Projet 01</span>
+          <span class="badge badge-live">Juin 2024 — Présent</span>
+        </div>
+        <h3>MyCoris Bank Corporate</h3>
+        <p class="p-org">Proxym IT</p>
+        <ul class="bullets">
+          <li>Développement d'une <strong>plateforme bancaire corporate multi-tenant</strong> déployée pour plusieurs institutions financières, architecturée en <strong>DDD, CQRS</strong> et hexagonale.</li>
+          <li>Conception d'un <strong>moteur de règles métier</strong> permettant d'adapter les comportements fonctionnels selon les besoins de chaque tenant.</li>
+          <li>Développement de <strong>microservices Spring Boot</strong> et optimisation des accès aux données via <strong>Redis</strong> et <strong>Elasticsearch</strong>.</li>
+          <li>Mise en place de <strong>tests unitaires et d'intégration</strong> pour garantir la fiabilité des fonctionnalités.</li>
+        </ul>
+        <div class="tags">
+          <span>Java</span><span>Spring Boot</span><span>Oracle</span><span>Elasticsearch</span><span>Kubernetes</span><span>GitLab CI/CD</span><span>Keycloak</span><span>OpenSearch</span><span>Docker</span><span>OneSignal</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-cat="bancaire backend">
+        <figure class="p-shot" style="height:300px;">
+          <img src="assets/projects/bankerise.png" alt="Écran d'accueil de la plateforme corporate Bankerise"
+               width="880" height="850" loading="lazy" style="object-fit:contain; object-position:center center;" />
+        </figure>
+        <div class="p-head">
+          <span class="p-index">Projet 02</span>
+          <span class="badge badge-live">Déc 2024 — Présent</span>
+        </div>
+        <h3>Plateforme bancaire corporate Bankerise</h3>
+        <p class="p-org">Proxym IT</p>
+        <ul class="bullets">
+          <li>Évolution d'une plateforme corporate en <strong>microservices orientés événements</strong>, suivant les principes <strong>CQRS</strong> et l'architecture hexagonale.</li>
+          <li>Adaptation de la solution issue de la plateforme Coris Corporate, aujourd'hui déployée pour <strong>Coris, BNA et BCRG</strong>.</li>
+          <li>Enrichissement du <strong>moteur de règles métier</strong> pour prendre en charge des configurations dynamiques propres à chaque institution.</li>
+          <li>Amélioration des performances des services Spring Boot par <strong>indexation Elasticsearch</strong> et <strong>cache Redis</strong>.</li>
+        </ul>
+        <div class="tags">
+          <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Elasticsearch</span><span>Kubernetes</span><span>GitLab CI/CD</span><span>Keycloak</span><span>Redis</span><span>Docker</span><span>Firebase</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-cat="backend">
+        <figure class="p-shot" style="height:300px;">
+          <img src="assets/projects/cbs.webp" alt="Console d'API du simulateur CBS Mock"
+               width="880" height="850" loading="lazy" style="object-fit:contain; object-position:center center;" />
+        </figure>
+        <div class="p-head">
+          <span class="p-index">Projet 03</span>
+          <span class="badge badge-live">En cours</span>
+        </div>
+        <h3>CBS Mock — Simulateur de Core Banking System</h3>
+        <p class="p-org">Proxym IT</p>
+        <ul class="bullets">
+          <li>Développement d'un <strong>simulateur interne de Core Banking System</strong> reproduisant les principaux comportements de <strong>Sopra Banking Platform</strong>.</li>
+          <li>Exposition d'<strong>API REST</strong> simulant les échanges avec le CBS, pour tester et développer sans dépendre des environnements externes.</li>
+          <li>Implémentation de scénarios couvrant la <strong>gestion des comptes</strong>, les <strong>transactions bancaires</strong> et les opérations liées aux données clients.</li>
+          <li>Conteneurisation <strong>Docker</strong> pour un déploiement simple dans tous les environnements.</li>
+        </ul>
+        <div class="tags">
+          <span>Java</span><span>Spring Boot</span><span>API REST</span><span>PostgreSQL</span><span>Docker</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-cat="bancaire backend">
+        <figure class="p-shot" style="height:300px;">
+          <img src="assets/projects/bna.png" alt="Écran d'accueil du back-office BNA H24 et de l'application mobile"
+               width="880" height="850" loading="lazy" style="object-fit:contain; object-position:center center;" />
+        </figure>
+        <div class="p-head">
+          <span class="p-index">Projet 04</span>
+          <span class="badge">Nov 2023 — Nov 2024</span>
+        </div>
+        <h3>Plateforme bancaire retail BNA H24</h3>
+        <p class="p-org">Proxym IT</p>
+        <ul class="bullets">
+          <li>Développement d'une <strong>solution bancaire digitale web et mobile</strong> basée sur la plateforme Bankerise, destinée aux clients de la BNA.</li>
+          <li>Fonctionnalités <strong>back-office</strong> : gestion des comptes, suivi des transactions, administration des agences et des DAB.</li>
+          <li>Conception et intégration d'<strong>API REST</strong> entre les applications digitales et les systèmes bancaires cœur, avec opérations <strong>temps réel</strong>.</li>
+          <li>Développement d'un <strong>portail CSA</strong> pour les agents bancaires et parcours d'intégration client avec règles de validation métier.</li>
+        </ul>
+        <div class="tags">
+          <span>Java</span><span>Spring Boot</span><span>API REST</span><span>PostgreSQL</span><span>Docker</span><span>CI/CD</span>
+        </div>
+      </article>
+
+      <article class="p-card reveal" data-cat="erp">
+        <figure class="p-shot" style="height:300px;">
+          <img src="assets/projects/erp.png" alt="Tableau de bord du module ERP AllSystems"
+               width="880" height="850" loading="lazy" style="object-fit:contain; object-position:center center;" />
+        </figure>
+        <div class="p-head">
+          <span class="p-index">Projet 05</span>
+          <span class="badge">Fév 2023 — Juin 2023</span>
+        </div>
+        <h3>Module ERP AllSystems</h3>
+        <p class="p-org">For Right Solution</p>
+        <ul class="bullets">
+          <li>Conception d'un <strong>module ERP</strong> pour la gestion des ressources de production avec le framework <strong>Laravel</strong>.</li>
+          <li>Construction d'un système de gestion <strong>RH et production</strong> avec workflows automatisés.</li>
+          <li>Implémentation de <strong>tableaux de bord interactifs</strong> pour l'optimisation de la planification de production.</li>
+          <li>Développement d'<strong>API RESTful</strong> avec optimisation de la base de données pour le <strong>reporting temps réel</strong>.</li>
+        </ul>
+        <div class="tags">
+          <span>PHP</span><span>Laravel</span><span>SQL Server</span><span>JavaScript</span><span>API RESTful</span><span>UML</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETENCES ============ -->
+<section class="section section-alt" id="competences">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">04</span>
+      <h2>Compétences techniques</h2>
+      <p class="section-sub">Stack et pratiques du quotidien</p>
+    </header>
+
+    <div class="skills">
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">01</span> Backend</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/java.svg" alt="" width="30" height="30" loading="lazy" /><span>Java</span></li>
+        <li><img src="assets/tech/spring-boot.svg" alt="" width="30" height="30" loading="lazy" /><span>Spring Boot</span></li>
+        <li><img src="assets/tech/sql.svg" alt="" width="30" height="30" loading="lazy" /><span>SQL</span></li>
+        <li><img src="assets/tech/php.svg" alt="" width="30" height="30" loading="lazy" /><span>PHP</span></li>
+        <li><img src="assets/tech/laravel.svg" alt="" width="30" height="30" loading="lazy" /><span>Laravel</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">02</span> Automatisation des processus</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/bpmn.svg" alt="" width="30" height="30" loading="lazy" /><span>BPMN</span></li>
+        <li><img src="assets/tech/flowable.svg" alt="" width="30" height="30" loading="lazy" /><span>Flowable BPM</span></li>
+        <li><img src="assets/tech/formio.svg" alt="" width="30" height="30" loading="lazy" /><span>Form.io</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">03</span> Frontend</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/angular.svg" alt="" width="30" height="30" loading="lazy" /><span>Angular</span></li>
+        <li><img src="assets/tech/javascript.svg" alt="" width="30" height="30" loading="lazy" /><span>JavaScript</span></li>
+        <li><img src="assets/tech/html5.svg" alt="" width="30" height="30" loading="lazy" /><span>HTML5</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">04</span> Bases de données &amp; Cache</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/postgresql.svg" alt="" width="30" height="30" loading="lazy" /><span>PostgreSQL</span></li>
+        <li><img src="assets/tech/oracle.svg" alt="" width="30" height="30" loading="lazy" /><span>Oracle</span></li>
+        <li><img src="assets/tech/redis.svg" alt="" width="30" height="30" loading="lazy" /><span>Redis</span></li>
+        <li><img src="assets/tech/elasticsearch.svg" alt="" width="30" height="30" loading="lazy" /><span>Elasticsearch</span></li>
+        <li><img src="assets/tech/sql-server.svg" alt="" width="30" height="30" loading="lazy" /><span>SQL Server</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">05</span> DevOps &amp; CI/CD</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/docker.svg" alt="" width="30" height="30" loading="lazy" /><span>Docker</span></li>
+        <li><img src="assets/tech/kubernetes.svg" alt="" width="30" height="30" loading="lazy" /><span>Kubernetes</span></li>
+        <li><img src="assets/tech/jenkins.svg" alt="" width="30" height="30" loading="lazy" /><span>Jenkins</span></li>
+        <li><img src="assets/tech/gitlab.svg" alt="" width="30" height="30" loading="lazy" /><span>GitLab</span></li>
+        <li><img src="assets/tech/liquibase.svg" alt="" width="30" height="30" loading="lazy" /><span>Liquibase</span></li>
+        <li><img src="assets/tech/git.svg" alt="" width="30" height="30" loading="lazy" /><span>Git</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="sk-tag">06</span> Sécurité</h3>
+        <ul class="tech-grid">
+        <li><img src="assets/tech/keycloak.svg" alt="" width="30" height="30" loading="lazy" /><span>Keycloak</span></li>
+        <li><img src="assets/tech/oauth2.svg" alt="" width="30" height="30" loading="lazy" /><span>OAuth2 / OIDC</span></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal skill-wide">
+        <h3><span class="sk-tag">07</span> Architecture &amp; méthodes</h3>
+        <ul class="pills"><li>Domain-Driven Design</li><li>TDD</li><li>CQRS</li><li>Architecture Hexagonale</li><li>Microservices</li><li>Agile / SCRUM</li></ul>
+      </div>
+    </div>
+
+    <div class="lang-block reveal">
+      <h3 class="lang-title">Langues</h3>
+      <div class="langs">
+        <div class="lang"><span class="lang-name">Arabe</span><span class="lang-level">Langue maternelle</span><span class="meter" data-level="100"><i></i></span></div>
+        <div class="lang"><span class="lang-name">Français</span><span class="lang-level">Niveau professionnel</span><span class="meter" data-level="85"><i></i></span></div>
+        <div class="lang"><span class="lang-name">Anglais</span><span class="lang-level">Niveau professionnel</span><span class="meter" data-level="80"><i></i></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMATION ============ -->
+<section class="section" id="formation">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">05</span>
+      <h2>Formation</h2>
+      <p class="section-sub">Cursus en informatique et génie logiciel</p>
+    </header>
+
+    <div class="edu">
+      <article class="edu-card reveal">
+        <span class="edu-step" aria-hidden="true">03</span>
+        <span class="badge badge-live">Sept 2023 — Juin 2027</span>
+        <h3>Diplôme d'Ingénieur, Génie Logiciel</h3>
+        <p class="edu-org">EPI International Multidisciplinary School — Sousse</p>
+        <p class="edu-note">Formation en alternance · Projet de Fin d'Études (PFE) en cours</p>
+      </article>
+      <article class="edu-card reveal">
+        <span class="edu-step" aria-hidden="true">02</span>
+        <span class="badge">Sept 2022 — Mai 2023</span>
+        <h3>Master 1, Services Web et Multimédia</h3>
+        <p class="edu-org">ISITCOM — Hammam Sousse</p>
+      </article>
+      <article class="edu-card reveal">
+        <span class="edu-step" aria-hidden="true">01</span>
+        <span class="badge">Sept 2019 — Juil 2022</span>
+        <h3>Licence, Sciences Informatiques</h3>
+        <p class="edu-org">ISSAT — Sousse</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-invert" id="contact">
+  <span class="invert-dots" aria-hidden="true"></span>
+  <div class="wrap">
+    <header class="section-head reveal">
+      <span class="section-num">06</span>
+      <h2>Travaillons ensemble</h2>
+      <p class="section-sub">Ouverte aux opportunités backend Java / Spring Boot — alternance, sur site ou à distance.</p>
+    </header>
+
+    <div class="contact-grid">
+      <a class="c-card reveal" href="mailto:asmaajmi237@gmail.com">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span>
+        <span class="c-label">Email</span>
+        <span class="c-value">asmaajmi237@gmail.com</span>
+      </a>
+      <a class="c-card reveal" href="tel:+21629721205">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg></span>
+        <span class="c-label">Téléphone</span>
+        <span class="c-value">+216 29 721 205</span>
+      </a>
+      <a class="c-card reveal" href="https://www.linkedin.com/in/asmaajmi" target="_blank" rel="noopener">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M8 10.8v5.7"/><path d="M8 7.8v.1"/><path d="M12 16.5v-5.7"/><path d="M12 13.2a2 2 0 0 1 4 0v3.3"/></svg></span>
+        <span class="c-label">LinkedIn</span>
+        <span class="c-value">/in/asmaajmi</span>
+      </a>
+      <a class="c-card reveal" href="https://github.com/asmaajmi" target="_blank" rel="noopener">
+        <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 19c-4 1.3-4-2.2-5.6-2.7M15 21v-3.4c0-1 .1-1.4-.5-2 2.6-.3 5-1.3 5-5.6a4.3 4.3 0 0 0-1.2-3 4 4 0 0 0-.1-3s-1-.3-3.3 1.2a11 11 0 0 0-5.8 0C6.8 1.7 5.8 2 5.8 2a4 4 0 0 0-.1 3 4.3 4.3 0 0 0-1.2 3c0 4.3 2.4 5.3 5 5.6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+        <span class="c-label">GitHub</span>
+        <span class="c-value">/asmaajmi</span>
+      </a>
+    </div>
+
+    <div class="contact-cta reveal">
+      <div>
+        <h3>Un projet backend à construire&nbsp;?</h3>
+        <p>Basée à Messadine, Sousse (4013) — réponse sous 24 h.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="mailto:asmaajmi237@gmail.com?subject=Opportunit%C3%A9%20-%20Ing%C3%A9nieure%20Backend">M'écrire un email</a>
+        <a class="btn btn-outline-invert" href="assets/CV-Asma-Ajmi.pdf" download>Mon CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="chatbot-widget" aria-live="polite">
+  <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Assistant de portfolio">
+    <div class="chat-header">
+      <div>
+        <strong>Asma Assistant</strong>
+        <span>En ligne</span>
+      </div>
+      <button class="chat-close" id="chatClose" type="button" aria-label="Fermer le chat">×</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">
+        Bonjour ! Je peux vous parler de mes projets, compétences ou vous indiquer comment me contacter.
+      </div>
+    </div>
+    <form class="chat-form" id="chatForm">
+      <input id="chatInput" type="text" placeholder="Écrivez votre message..." aria-label="Message" />
+      <button type="submit" aria-label="Envoyer">Envoyer</button>
+    </form>
+  </div>
+
+  <button class="chat-toggle" id="chatToggle" type="button" aria-label="Ouvrir le chat">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 7.5A3.5 3.5 0 0 1 9.5 4h5A3.5 3.5 0 0 1 18 7.5v6A3.5 3.5 0 0 1 14.5 17H11l-4 3v-3.2A3.5 3.5 0 0 1 6 13.5z"/><path d="M9 9.5h6M9 12.5h4"/></svg>
+  </button>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span id="year">2026</span> Asma Ajmi — Ingénieure Logiciel Backend</p>
+    <p class="footer-stack">Java · Spring Boot · DDD · CQRS · Architecture hexagonale</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Revenir en haut">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

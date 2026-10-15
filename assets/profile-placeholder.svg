@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="500" height="600" role="img" aria-label="Emplacement pour la photo de profil">
+  <rect width="500" height="600" fill="#14203A"/>
+
+  <!-- silhouette -->
+  <circle cx="250" cy="238" r="78" fill="#24314F"/>
+  <path d="M120 466c0-72 58-124 130-124s130 52 130 124v34H120z" fill="#24314F"/>
+
+  <!-- accents pleins (aucun dégradé) -->
+  <rect x="46" y="46" width="58" height="6" fill="#D64525"/>
+  <rect x="46" y="46" width="6" height="58" fill="#D64525"/>
+  <rect x="396" y="548" width="58" height="6" fill="#D64525"/>
+  <rect x="448" y="496" width="6" height="58" fill="#D64525"/>
+
+  <text x="250" y="540" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="17" letter-spacing="2" fill="#9DA9C0">assets/profile.jpg</text>
+</svg>
