@@ -1,97 +1,109 @@
 # Portfolio — Asma Ajmi
 
-Portfolio professionnel statique (HTML / CSS / JavaScript, sans framework ni build),
-généré à partir du CV `RenderCV_Classic_Theme__1_.pdf`.
+Portfolio professionnel (HTML / CSS / JavaScript, sans framework front) servi par un petit
+serveur Node qui héberge aussi le **chatbot IA** (proxy sécurisé vers l'API Claude).
 
-## ➜ Ajouter votre photo de profil
+- 3 langues : **français, anglais, arabe** (RTL complet pour l'arabe)
+- thème **clair / sombre** (préférence enregistrée, sinon thème du système)
+- chatbot IA contextuel, avec réponses de secours hors ligne
+- le site reste utilisable en **hébergement statique** : sans backend, le chatbot passe automatiquement en mode hors ligne
 
-Déposez votre portrait ici, avec **exactement ce nom** :
+## Lancer en local
+
+```bash
+npm install
+cp .env.example .env      # puis renseigner ANTHROPIC_API_KEY
+npm start                 # http://127.0.0.1:5173
+```
+
+Sans clé API le site fonctionne ; le chatbot répond alors avec de courtes réponses locales.
+
+| Commande | Rôle |
+|---|---|
+| `npm start` | serveur (fichiers statiques + `/api/chat` + `/api/health`) |
+| `npm run dev` | idem avec rechargement automatique |
+| `npm run lint` | vérification de syntaxe de tous les fichiers JS |
+| `npm test` | tests unitaires et d'intégration (Node ≥ 18, `node:test`) |
+
+## Variables d'environnement
+
+Voir `.env.example`. **La clé n'est jamais envoyée au navigateur** : seul le serveur parle à l'API.
+
+| Variable | Défaut | Description |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | — | clé API Claude (obligatoire pour l'IA) |
+| `ANTHROPIC_MODEL` | `claude-opus-5-5` | modèle utilisé |
+| `ANTHROPIC_EFFORT` | `low` | `low` / `medium` / `high` : profondeur de réflexion, donc coût et latence |
+| `ANTHROPIC_FALLBACKS` | `default` | mettre `off` pour désactiver le repli serveur en cas de refus (API Claude uniquement) |
+| `PORT` / `HOST` | `5173` / `127.0.0.1` | écoute ; `HOST=0.0.0.0` en conteneur |
+| `CHAT_RATE_LIMIT_PER_MINUTE` | `8` | requêtes chat par IP et par minute |
+| `CHAT_RATE_LIMIT_PER_DAY` | `100` | requêtes chat par IP et par jour |
+| `ALLOWED_ORIGINS` | vide | origines autorisées pour `/api/chat` (vide = toutes) |
+| `TRUST_PROXY` | `0` | `1` derrière un reverse proxy de confiance (utilise `X-Forwarded-For`) |
+
+## Architecture du chatbot
 
 ```
-assets/profile.jpg
+navigateur ──POST /api/chat──▶ server/app.js ──▶ server/chat.js ──▶ API Claude
+  historique (sessionStorage)    limite de débit      validation + prompt système
+  réponses locales si échec      origine, taille      (construit depuis i18n.js)
 ```
 
-- Format conseillé : **portrait**, ratio ~5:6 (ex. 800 × 960 px), visage centré en haut.
-- Tant que le fichier est absent, un visuel de remplacement s'affiche automatiquement
-  (`assets/profile-placeholder.svg`) — aucun réglage à faire.
-- Pour un cadrage différent : `styles.css` → `.photo-holder img { object-position: … }`.
-
-## ➜ Remplacer les visuels des projets
-
-Chaque projet affiche un **aperçu d'écran d'accueil** dessiné en SVG (`assets/projects/`).
-Pour mettre une vraie capture à la place — quand elle est publiable :
-
-1. Enregistrez la capture dans `assets/projects/` (ex. `mycoris.png`), format **880 × 520** ou tout ratio 16/9.
-2. Dans `index.html`, changez l'extension du `src` de la carte concernée :
-   `src="assets/projects/mycoris.svg"` → `src="assets/projects/mycoris.png"`.
-
-L'attribut `data-remplacer-par` sur chaque `<img>` rappelle le chemin attendu.
-Les aperçus SVG restent parfaitement présentables si les écrans réels sont confidentiels.
+- `server/knowledge.js` construit le prompt système **à partir du contenu du site** (`i18n.js`, version anglaise) :
+  le chatbot ne peut donc pas diverger du portfolio. Il répond dans la langue du dernier message du visiteur.
+- `server/chat.js` valide la requête (taille, rôles, historique), appelle Claude et convertit les erreurs en codes
+  sûrs (`rate_limited`, `unavailable`, `too_long`…) : aucun message d'erreur amont n'est renvoyé au navigateur.
+- `server/app.js` n'expose que `index.html`, `styles.css`, `script.js`, `i18n.js` et `assets/` — jamais `.env`,
+  `server/`, `tests/` ni `node_modules`.
+- Limite de débit en mémoire (instance unique). Avec plusieurs instances, utiliser un stockage partagé (Redis…).
 
 ## Structure
 
 ```
 portfolio/
-├── index.html          # contenu complet (profil, expérience, projets, compétences, formation, contact)
-├── styles.css          # design system : variables CSS, thème clair/sombre, responsive, impression
-├── script.js           # thème, menu mobile, scroll spy, animations, filtres projets, jauges
-├── assets/
-│   ├── profile.jpg            ← VOTRE PHOTO (à ajouter)
-│   ├── profile-placeholder.svg
-│   ├── CV-Asma-Ajmi.pdf       # CV téléchargeable depuis le hero et la section contact
-│   ├── favicon.svg
-│   ├── projects/              # 5 aperçus « écran d'accueil » (SVG)
-│   │   ├── mycoris.svg  bankerise.svg  cbs-mock.svg
-│   │   └── bna-h24.svg  erp-allsystems.svg
-│   └── tech/                  # 24 logos de technologies (SVG) affichés dans Compétences
-└── .claude/launch.json # config du serveur local de prévisualisation
+├── index.html        # contenu (attributs data-i18n* pour la traduction)
+├── styles.css        # design system : tokens, thèmes clair/sombre, propriétés logiques (LTR/RTL), responsive
+├── script.js         # thème, langue, navigation, animations, filtres, chatbot (client)
+├── i18n.js           # dictionnaires FR / EN / AR (mêmes clés partout, vérifié par les tests)
+├── server/           # serveur Node : app, chat, knowledge, rate-limit, env
+├── tests/            # node:test — i18n, rate limit, chat, serveur HTTP
+├── docs/tests/       # scénarios de test (automatiques + manuels)
+└── assets/           # photo, CV, logos techno, captures de projets (WebP)
 ```
 
-## Lancer en local
+## Internationalisation
 
-```bash
-python -m http.server 5173
-```
+- Texte : `data-i18n="clé"` (texte), `data-i18n-html="clé"` (HTML simple), `data-i18n-attr="aria-label:clé;alt:clé"` (attributs).
+- Ajouter ou modifier un texte : éditer **les trois** dictionnaires dans `i18n.js` ; `npm test` échoue si une clé manque
+  ou si une clé utilisée dans `index.html` / `script.js` n'existe pas.
+- La langue est détectée avant le premier rendu (préférence enregistrée, sinon langue du navigateur, sinon français).
+- Mise en page en propriétés logiques CSS (`inline-start/end`) : le RTL n'a que quelques surcharges ciblées
+  (flèches retournées, jauges, cadre photo).
+- Les contenus techniques (noms de technologies, e-mail, téléphone) restent en LTR dans la page arabe.
 
-Puis ouvrir http://localhost:5173
+## Projets : visuels
 
-## Parti pris graphique
+Les cinq cartes affichent un cadre de fenêtre à ratio constant, sur un fond teinté propre à chaque projet.
+Les captures sont **réelles** (WebP optimisés dans `assets/projects/`), sauf **CBS Mock** : aucune capture publiable
+n'existait, la carte affiche donc une **maquette illustrative** (`assets/projects/cbs-mock.svg`) clairement étiquetée
+« Maquette illustrative ». Pour la remplacer, déposer une capture `cbs-mock.webp` et changer le `src` de la carte.
+Les anciennes captures PNG et les SVG historiques restent dans `assets/projects/` mais ne sont plus référencés.
 
-- **Aucun dégradé** : toutes les couleurs sont des aplats (`background-color` uniquement).
-  La profondeur vient des bordures, des décalages de blocs, des ombres et des motifs de points SVG.
-- Palette **encre marine `#14203A` + vermillon `#D64525`** sur papier chaud `#F4F1EB`
-  (version sombre : `#0C111B` / `#FF6B45`).
-- Typographie : **Space Grotesk** (titres) + **Inter** (texte) + **JetBrains Mono** (badges, code, numéros).
-- Éléments marquants : photo encadrée avec bloc décalé et badges flottants, bandeau
-  défilant de technologies, aperçus d'écran en tête de chaque projet, tuiles à logos
-  dans les compétences, section contact inversée.
-- Tous les visuels (aperçus projets, logos, remplacement photo, favicon) sont des SVG
-  locaux : aucune dépendance externe, aucun CDN d'images.
-- Thème clair/sombre automatique + bouton, mémorisé en `localStorage`.
-- Accessible : lien d'évitement, focus visibles, `prefers-reduced-motion`, contrastes AA.
+## Remplacer la photo
 
-## Personnalisation rapide
-
-| Quoi | Où |
-|---|---|
-| Couleur d'accent | `styles.css` → `--accent`, `--accent-ink`, `--accent-soft` |
-| Couleur marine | `styles.css` → `--navy`, `--invert-bg` |
-| Textes / projets | `index.html` (sections commentées) |
-| Filtres projets | attribut `data-cat` sur chaque `<article class="p-card">` |
-| Chiffres du hero | `<ul class="hero-stats">` dans `index.html` |
-| Logo d'une techno | remplacer le fichier `assets/tech/<nom>.svg` (30 × 30 à l'affichage) |
-| Ajouter une techno | `<li><img src="assets/tech/x.svg" alt="" width="30" height="30" /><span>X</span></li>` |
-| Niveaux de langues | attribut `data-level` sur `<span class="meter">` |
-
-## À vérifier / compléter
-
-- Les URLs **LinkedIn** (`/in/asmaajmi`) et **GitHub** (`/asmaajmi`) sont déduites des
-  identifiants du CV — à corriger dans `index.html` si les profils réels diffèrent.
-- Le CV liste les dates dans une colonne séparée ; l'association projet ↔ période a été
-  reconstituée dans cet ordre : MyCoris (juin 2024 →), Bankerise (déc. 2024 →), CBS Mock
-  (en cours), BNA H24 (nov. 2023 – nov. 2024), ERP AllSystems (fév. – juin 2023).
+Déposer `assets/asma_photo.webp` (portrait ≈ 4:5, 720 × 900). Un visuel de remplacement s'affiche si le fichier est absent.
 
 ## Déploiement
 
-Site 100 % statique : déployable tel quel sur GitHub Pages, Netlify, Vercel ou tout
-hébergement classique (glisser-déposer du dossier).
+- **Avec chatbot IA** : n'importe quel hébergement Node (`npm start`, variables d'environnement définies sur la plateforme,
+  `HOST=0.0.0.0`, `TRUST_PROXY=1` derrière un proxy).
+- **Statique uniquement** (GitHub Pages, Netlify…) : publier `index.html`, `styles.css`, `script.js`, `i18n.js` et
+  `assets/`. Le chatbot détecte l'absence de `/api` et utilise ses réponses locales.
+- Ne jamais publier `.env`.
+
+## À vérifier
+
+- Les URLs **LinkedIn** (`/in/asmaajmi`) et **GitHub** (`/asmaajmi`) sont déduites du CV : à corriger dans `index.html`
+  et `i18n.js`/`server/knowledge.js` si les profils réels diffèrent.
+- Les dates des projets ont été reconstituées à partir du CV (MyCoris juin 2024 →, Bankerise déc. 2024 →, CBS Mock en cours,
+  BNA H24 nov. 2023 – nov. 2024, ERP fév. – juin 2023).

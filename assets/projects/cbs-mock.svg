@@ -1,1 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" role="img" aria-label="Écran d'accueil — CBS Mock"><rect width="880" height="520" fill="#14203A"/><rect x="0" y="0" width="880" height="34" fill="#1C2A47"/><circle cx="22" cy="17" r="5" fill="#D64525"/><circle cx="40" cy="17" r="5" fill="#40507A"/><circle cx="58" cy="17" r="5" fill="#40507A"/><rect x="92" y="9" width="300" height="16" rx="8" fill="#14203A"/><text x="106" y="21" font-family="'JetBrains Mono',Consolas,monospace" font-size="10" fill="#8C9AB8">localhost:8080 / swagger-ui</text><line x1="0" y1="34" x2="880" y2="34" stroke="#2E4066" stroke-width="1"/><rect x="0" y="34" width="196" height="486" fill="#1C2A47"/><line x1="196" y1="34" x2="196" y2="520" stroke="#2E4066" stroke-width="1"/><rect x="24" y="58" width="30" height="30" rx="8" fill="#D64525"/><rect x="64" y="66" width="86" height="7" rx="3.5" fill="#F4F1EB" opacity=".85"/><rect x="64" y="78" width="56" height="6" rx="3" fill="#8C9AB8" opacity=".7"/><rect x="14" y="106" width="168" height="34" rx="9" fill="#D64525" opacity=".16"/><rect x="14" y="106" width="3.5" height="34" rx="2" fill="#D64525"/><rect x="30" y="115" width="14" height="14" rx="4" fill="#F4F1EB" opacity=".8"/><text x="54" y="126" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#F4F1EB">Endpoints</text><rect x="30" y="157" width="14" height="14" rx="4" fill="#8C9AB8" opacity=".8"/><text x="54" y="168" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#8C9AB8">Comptes</text><rect x="30" y="199" width="14" height="14" rx="4" fill="#8C9AB8" opacity=".8"/><text x="54" y="210" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#8C9AB8">Transactions</text><rect x="30" y="241" width="14" height="14" rx="4" fill="#8C9AB8" opacity=".8"/><text x="54" y="252" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#8C9AB8">Clients</text><rect x="30" y="283" width="14" height="14" rx="4" fill="#8C9AB8" opacity=".8"/><text x="54" y="294" font-family="'JetBrains Mono',Consolas,monospace" font-size="11" fill="#8C9AB8">Scénarios</text><text x="230" y="76" font-family="Verdana,sans-serif" font-size="19" font-weight="700" fill="#F4F1EB">CBS Mock — API REST</text><text x="230" y="98" font-family="'JetBrains Mono',Consolas,monospace" font-size="10.5" fill="#8C9AB8">Simulateur Sopra Banking Platform</text><rect x="230" y="122" width="360" height="44" rx="10" fill="#1C2A47" stroke="#2E4066"/><rect x="244" y="135" width="46" height="18" rx="5" fill="#3FA37A"/><text x="267" y="148" font-family="'JetBrains Mono',Consolas,monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">GET</text><text x="302" y="149" font-family="'JetBrains Mono',Consolas,monospace" font-size="10.5" fill="#F4F1EB">/api/accounts/{id}</text><rect x="230" y="176" width="360" height="44" rx="10" fill="#1C2A47" stroke="#2E4066"/><rect x="244" y="189" width="46" height="18" rx="5" fill="#D64525"/><text x="267" y="202" font-family="'JetBrains Mono',Consolas,monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">POST</text><text x="302" y="203" font-family="'JetBrains Mono',Consolas,monospace" font-size="10.5" fill="#F4F1EB">/api/transfers</text><rect x="230" y="230" width="360" height="44" rx="10" fill="#1C2A47" stroke="#2E4066"/><rect x="244" y="243" width="46" height="18" rx="5" fill="#3FA37A"/><text x="267" y="256" font-family="'JetBrains Mono',Consolas,monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">GET</text><text x="302" y="257" font-family="'JetBrains Mono',Consolas,monospace" font-size="10.5" fill="#F4F1EB">/api/customers</text><rect x="230" y="284" width="360" height="44" rx="10" fill="#1C2A47" stroke="#2E4066"/><rect x="244" y="297" width="46" height="18" rx="5" fill="#C99A2E"/><text x="267" y="310" font-family="'JetBrains Mono',Consolas,monospace" font-size="9" fill="#FFFFFF" text-anchor="middle">PUT</text><text x="302" y="311" font-family="'JetBrains Mono',Consolas,monospace" font-size="10.5" fill="#F4F1EB">/api/accounts/{id}/status</text><rect x="606" y="122" width="240" height="270" rx="12" fill="#0F1930" stroke="#2E4066"/><text x="622" y="144" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8C9AB8">200 OK · response.json</text><text x="622" y="168" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#F4F1EB">{</text><text x="634" y="188" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8FD3B6">"accountId": "TN59…"</text><text x="634" y="208" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#F2C97D">"balance": 48250.00</text><text x="634" y="228" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8FD3B6">"currency": "TND"</text><text x="634" y="248" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8FD3B6">"status": "ACTIVE"</text><text x="634" y="268" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#F4F1EB">"transactions": [</text><text x="646" y="288" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8FD3B6">{ "type": "CREDIT" }</text><text x="646" y="308" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#8FD3B6">{ "type": "DEBIT" }</text><text x="634" y="328" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#F4F1EB">]</text><text x="622" y="348" font-family="'JetBrains Mono',Consolas,monospace" font-size="9.5" fill="#F4F1EB">}</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 648" width="1440" height="648" role="img" aria-label="CBS Mock — REST API console (illustrative mockup)">
+  <rect width="1440" height="648" fill="#0f172a"/>
+  <!-- sidebar -->
+  <rect width="300" height="648" fill="#111c33"/>
+  <rect x="300" width="1" height="648" fill="#22314f"/>
+  <rect x="32" y="34" width="44" height="44" rx="12" fill="#14b8a6"/>
+  <path d="M44 56h20M54 46v20" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+  <text x="92" y="52" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="700" fill="#e2e8f0">CBS Mock</text>
+  <text x="92" y="73" font-family="JetBrains Mono,Consolas,monospace" font-size="12.5" fill="#7c8db0">core-banking simulator</text>
+  <g font-family="Inter,Segoe UI,sans-serif" font-size="15">
+    <rect x="20" y="118" width="260" height="44" rx="10" fill="#14b8a6" fill-opacity=".14"/>
+    <rect x="20" y="118" width="4" height="44" rx="2" fill="#14b8a6"/>
+    <text x="48" y="146" fill="#e2e8f0" font-weight="600">Accounts</text>
+    <text x="48" y="202" fill="#8fa0c2">Transactions</text>
+    <text x="48" y="252" fill="#8fa0c2">Customers</text>
+    <text x="48" y="302" fill="#8fa0c2">Scenarios</text>
+    <text x="48" y="352" fill="#8fa0c2">Health</text>
+  </g>
+  <rect x="20" y="560" width="260" height="56" rx="12" fill="#0b1324" stroke="#22314f"/>
+  <circle cx="44" cy="588" r="6" fill="#22c55e"/>
+  <text x="60" y="593" font-family="JetBrains Mono,Consolas,monospace" font-size="13" fill="#a7b4cf">docker · running</text>
+
+  <!-- main -->
+  <text x="340" y="66" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#f1f5f9">REST API</text>
+  <text x="340" y="94" font-family="JetBrains Mono,Consolas,monospace" font-size="13.5" fill="#7c8db0">Simulated core banking endpoints · OpenAPI</text>
+
+  <g font-family="JetBrains Mono,Consolas,monospace" font-size="15">
+    <rect x="340" y="128" width="560" height="62" rx="12" fill="#111c33" stroke="#22314f"/>
+    <rect x="360" y="146" width="62" height="26" rx="7" fill="#16a34a"/>
+    <text x="391" y="164" text-anchor="middle" font-size="12.5" font-weight="700" fill="#f0fdf4">GET</text>
+    <text x="440" y="165" fill="#e2e8f0">/api/accounts/{id}</text>
+
+    <rect x="340" y="204" width="560" height="62" rx="12" fill="#111c33" stroke="#14b8a6" stroke-opacity=".6"/>
+    <rect x="360" y="222" width="62" height="26" rx="7" fill="#0d9488"/>
+    <text x="391" y="240" text-anchor="middle" font-size="12.5" font-weight="700" fill="#f0fdfa">POST</text>
+    <text x="440" y="241" fill="#e2e8f0">/api/transfers</text>
+
+    <rect x="340" y="280" width="560" height="62" rx="12" fill="#111c33" stroke="#22314f"/>
+    <rect x="360" y="298" width="62" height="26" rx="7" fill="#16a34a"/>
+    <text x="391" y="316" text-anchor="middle" font-size="12.5" font-weight="700" fill="#f0fdf4">GET</text>
+    <text x="440" y="317" fill="#e2e8f0">/api/accounts/{id}/transactions</text>
+
+    <rect x="340" y="356" width="560" height="62" rx="12" fill="#111c33" stroke="#22314f"/>
+    <rect x="360" y="374" width="62" height="26" rx="7" fill="#d97706"/>
+    <text x="391" y="392" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fffbeb">PUT</text>
+    <text x="440" y="393" fill="#e2e8f0">/api/accounts/{id}/status</text>
+
+    <rect x="340" y="432" width="560" height="62" rx="12" fill="#111c33" stroke="#22314f"/>
+    <rect x="360" y="450" width="62" height="26" rx="7" fill="#16a34a"/>
+    <text x="391" y="468" text-anchor="middle" font-size="12.5" font-weight="700" fill="#f0fdf4">GET</text>
+    <text x="440" y="469" fill="#e2e8f0">/api/customers/{id}</text>
+  </g>
+
+  <!-- response panel -->
+  <rect x="932" y="128" width="476" height="470" rx="16" fill="#0b1324" stroke="#22314f"/>
+  <rect x="932" y="128" width="476" height="52" rx="16" fill="#111c33"/>
+  <rect x="932" y="160" width="476" height="20" fill="#111c33"/>
+  <rect x="954" y="142" width="64" height="24" rx="12" fill="#16a34a" fill-opacity=".18"/>
+  <text x="986" y="159" text-anchor="middle" font-family="JetBrains Mono,Consolas,monospace" font-size="12.5" font-weight="700" fill="#4ade80">201</text>
+  <text x="1032" y="159" font-family="JetBrains Mono,Consolas,monospace" font-size="13" fill="#8fa0c2">POST /api/transfers · 42 ms</text>
+  <g font-family="JetBrains Mono,Consolas,monospace" font-size="15">
+    <text x="958" y="218" fill="#cbd5e1">{</text>
+    <text x="980" y="248" fill="#7dd3fc">"transferId"<tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"TRF-000184"</tspan><tspan fill="#cbd5e1">,</tspan></text>
+    <text x="980" y="278" fill="#7dd3fc">"status"<tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"EXECUTED"</tspan><tspan fill="#cbd5e1">,</tspan></text>
+    <text x="980" y="308" fill="#7dd3fc">"amount"<tspan fill="#cbd5e1">: </tspan><tspan fill="#fcd34d">1250.00</tspan><tspan fill="#cbd5e1">,</tspan></text>
+    <text x="980" y="338" fill="#7dd3fc">"currency"<tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"TND"</tspan><tspan fill="#cbd5e1">,</tspan></text>
+    <text x="980" y="368" fill="#7dd3fc">"debtor"<tspan fill="#cbd5e1">: { </tspan><tspan fill="#7dd3fc">"account"</tspan><tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"…4501"</tspan><tspan fill="#cbd5e1"> },</tspan></text>
+    <text x="980" y="398" fill="#7dd3fc">"creditor"<tspan fill="#cbd5e1">: { </tspan><tspan fill="#7dd3fc">"account"</tspan><tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"…7720"</tspan><tspan fill="#cbd5e1"> },</tspan></text>
+    <text x="980" y="428" fill="#7dd3fc">"scenario"<tspan fill="#cbd5e1">: </tspan><tspan fill="#86efac">"nominal"</tspan></text>
+    <text x="958" y="458" fill="#cbd5e1">}</text>
+  </g>
+  <rect x="958" y="510" width="200" height="40" rx="10" fill="#14b8a6" fill-opacity=".14" stroke="#14b8a6" stroke-opacity=".5"/>
+  <text x="1058" y="535" text-anchor="middle" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="600" fill="#5eead4">Replay scenario</text>
+</svg>
