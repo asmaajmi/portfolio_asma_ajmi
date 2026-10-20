@@ -42,14 +42,19 @@ ${bullets('exp2', 4)}
 
 ## Projects (client projects: source code and demos are not public)
 1. ${t('p1Title')} — Proxym IT (${t('p1Date')}). Stack: Java, Spring Boot, Oracle, Elasticsearch, OpenSearch, Kubernetes, GitLab CI/CD, Keycloak, Docker, OneSignal.
+  - Role: ${t('p1Role')}. Context: ${t('p1Context')}
 ${bullets('p1', 4)}
 2. ${t('p2Title')} — Proxym IT (${t('p2Date')}). Stack: Java, Spring Boot, PostgreSQL, Elasticsearch, Kubernetes, GitLab CI/CD, Keycloak, Redis, Docker, Firebase.
+  - Role: ${t('p2Role')}. Context: ${t('p2Context')}
 ${bullets('p2', 4)}
 3. ${t('p3Title')} — Proxym IT (${t('p3Date')}). Stack: Java, Spring Boot, REST API, PostgreSQL, Docker.
+  - Role: ${t('p3Role')}. Context: ${t('p3Context')}
 ${bullets('p3', 4)}
 4. ${t('p4Title')} — Proxym IT (${t('p4Date')}). Stack: Java, Spring Boot, REST API, PostgreSQL, Docker, CI/CD.
+  - Role: ${t('p4Role')}. Context: ${t('p4Context')}
 ${bullets('p4', 4)}
 5. ${t('p5Title')} — For Right Solution (${t('p5Date')}). Stack: PHP, Laravel, SQL Server, JavaScript, RESTful API, UML.
+  - Role: ${t('p5Role')}. Context: ${t('p5Context')}
 ${bullets('p5', 4)}
 
 ## Technical skills
