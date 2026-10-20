@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" data-theme="light">
+<html lang="fr" dir="ltr" data-theme="light" data-accent="jade">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,17 +7,18 @@
 <meta name="description" data-i18n-attr="content:metaDescription" content="Portfolio d'Asma Ajmi, ingénieure logiciel full stack : Java, Spring Boot, Angular, PHP, microservices, DDD, CQRS et architecture hexagonale pour la banque et l'assurance." />
 <meta name="author" content="Asma Ajmi" />
 <meta name="color-scheme" content="light dark" />
-<meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#0e1424" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f7f7f4" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)" />
 <meta property="og:title" content="Asma Ajmi — Full Stack Software Engineer" />
 <meta property="og:description" content="Java · Spring Boot · Angular · PHP · Microservices · DDD · CQRS" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/asma_photo.webp" />
 <script>
-  /* Avant le premier rendu : thème (préférence enregistrée, sinon système) et langue, sans flash. */
+  /* Avant le premier rendu : thème (préférence enregistrée, sinon système), accent et langue, sans flash. */
   (function () {
-    var d = document.documentElement, theme = null, lang = null;
-    try { theme = localStorage.getItem('aa-theme-pref'); lang = localStorage.getItem('aa-language'); } catch (e) {}
+    var d = document.documentElement, theme = null, lang = null, accent = null;
+    try { theme = localStorage.getItem('aa-theme-pref'); lang = localStorage.getItem('aa-language'); accent = localStorage.getItem('aa-accent'); } catch (e) {}
+    if (['jade', 'violet', 'ocean'].indexOf(accent) === -1) accent = 'jade';
     if (theme !== 'light' && theme !== 'dark') {
       theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
@@ -30,15 +31,16 @@
       }
     }
     d.setAttribute('data-theme', theme);
+    d.setAttribute('data-accent', accent);
     d.lang = lang;
     d.dir = lang === 'ar' ? 'rtl' : 'ltr';
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
-<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}.tech-grid li,.pills li,.tags span,.bullets li{opacity:1!important}.meter i{transform:none!important}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;filter:none!important}.tech-grid li,.pills li,.tags span,.bullets li{opacity:1!important}.meter i{transform:none!important}.tags span.is-extra{display:inline!important}</style></noscript>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <script src="i18n.js" defer></script>
 <script src="script.js" defer></script>
@@ -51,7 +53,7 @@
 <header class="site-header" id="siteHeader">
   <div class="wrap header-inner">
     <a href="#accueil" class="brand" aria-label="Asma Ajmi">
-      <span class="brand-mark" aria-hidden="true">AA</span>
+      <span class="brand-mark" aria-hidden="true">a</span>
       <span class="brand-text">Asma&nbsp;Ajmi<em data-i18n="brandRole">Full Stack Developer</em></span>
     </a>
 
@@ -68,6 +70,11 @@
 
     <div class="header-actions">
       <a class="btn btn-sm btn-primary header-cta" href="#contact" data-i18n="headerCta">Me contacter</a>
+      <button class="cmdk-trigger" id="cmdkTrigger" type="button" aria-haspopup="dialog" aria-controls="cmdk" aria-keyshortcuts="Control+K Meta+K" data-i18n-attr="aria-label:cmdOpen;title:cmdOpen" aria-label="Ouvrir la palette de commandes">
+        <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+        <span class="cmdk-trigger-text" data-i18n="cmdSearch">Rechercher</span>
+        <kbd class="kbd-shortcut" aria-hidden="true">Ctrl K</kbd>
+      </button>
       <div class="lang-switch" role="group" data-i18n-attr="aria-label:langSwitchLabel" aria-label="Choisir la langue">
         <button class="lang-btn" type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
         <button class="lang-btn" type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
@@ -122,7 +129,7 @@
       </div>
 
       <ul class="hero-meta">
-        <li><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> <span data-i18n="heroLocation">Messadine, Sousse 4013 — Tunisie</span></li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> <span data-i18n="heroLocation">Messadine, Sousse 4013 — Tunisie</span> <span class="local-time" id="localTime" hidden></span></li>
         <li><a href="mailto:asmaajmi237@gmail.com"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg> <span dir="ltr">asmaajmi237@gmail.com</span></a></li>
         <li><a href="tel:+21629721205"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg> <span dir="ltr">+216 29 721 205</span></a></li>
       </ul>
@@ -140,8 +147,8 @@
         </div>
 
         <div class="photo-badge">
-          <b>3<span>+</span></b>
-          <span class="pb-text" data-i18n-html="photoBadge">ans<br>d'expérience</span>
+          <span class="pb-dot" aria-hidden="true"></span>
+          <span class="pb-text"><span data-i18n="photoBadgeNow">Actuellement chez</span><b>Proxym IT</b></span>
         </div>
       </div>
     </div>
@@ -316,7 +323,7 @@
 
     <div class="projects" id="projects">
 
-      <article class="p-card reveal" data-cat="bancaire backend" style="--p-hue:214">
+      <article class="p-card reveal is-featured" id="project-mycoris" data-slug="mycoris" data-cat="bancaire backend" style="--p-hue:214">
         <figure class="p-visual">
           <div class="p-window" dir="ltr">
             <div class="p-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>MyCoris Corporate</span></div>
@@ -329,22 +336,33 @@
             <span class="p-index"><span data-i18n="projectLabel">Projet</span> 01</span>
             <span class="badge badge-live" data-i18n="p1Date">Juin 2024 — Présent</span>
           </div>
-          <h3 data-i18n="p1Title">MyCoris Bank Corporate</h3>
+          <h3 class="p-title" id="p1-title" data-i18n="p1Title">MyCoris Bank Corporate</h3>
           <p class="p-org">Proxym IT</p>
-          <ul class="bullets">
-            <li data-i18n-html="p1B1">Développement d'une <strong>plateforme bancaire corporate multi-tenant</strong> déployée pour plusieurs institutions financières, architecturée en <strong>DDD, CQRS</strong> et hexagonale.</li>
-            <li data-i18n-html="p1B2">Conception d'un <strong>moteur de règles métier</strong> permettant d'adapter les comportements fonctionnels selon les besoins de chaque tenant.</li>
-            <li data-i18n-html="p1B3">Développement de <strong>microservices Spring Boot</strong> et optimisation des accès aux données via <strong>Redis</strong> et <strong>Elasticsearch</strong>.</li>
-            <li data-i18n-html="p1B4">Mise en place de <strong>tests unitaires et d'intégration</strong> pour garantir la fiabilité des fonctionnalités.</li>
-          </ul>
+          <p class="p-summary" data-i18n="p1Summary">Plateforme bancaire corporate multi-tenant en DDD / CQRS, avec un moteur de règles métier propre à chaque institution.</p>
           <div class="tags" dir="ltr">
             <span>Java</span><span>Spring Boot</span><span>Oracle</span><span>Elasticsearch</span><span>Kubernetes</span><span>GitLab CI/CD</span><span>Keycloak</span><span>OpenSearch</span><span>Docker</span><span>OneSignal</span>
           </div>
-          <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+          <div class="p-foot">
+            <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+            <button class="p-open" type="button" aria-haspopup="dialog" aria-controls="projectDialog" aria-describedby="p1-title">
+              <span data-i18n="projectOpen">Voir le détail</span>
+              <svg class="ico-dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="p-details" hidden>
+            <p data-detail="role" data-i18n="p1Role">Développeuse Backend</p>
+            <p data-detail="context" data-i18n="p1Context">Plusieurs institutions financières partagent la même plateforme corporate, mais chacune a ses propres règles, produits et parcours. L'enjeu : isoler chaque tenant et adapter son comportement sans dupliquer le code.</p>
+            <ul class="bullets">
+              <li data-i18n-html="p1B1">Développement d'une <strong>plateforme bancaire corporate multi-tenant</strong> déployée pour plusieurs institutions financières, architecturée en <strong>DDD, CQRS</strong> et hexagonale.</li>
+              <li data-i18n-html="p1B2">Conception d'un <strong>moteur de règles métier</strong> permettant d'adapter les comportements fonctionnels selon les besoins de chaque tenant.</li>
+              <li data-i18n-html="p1B3">Développement de <strong>microservices Spring Boot</strong> et optimisation des accès aux données via <strong>Redis</strong> et <strong>Elasticsearch</strong>.</li>
+              <li data-i18n-html="p1B4">Mise en place de <strong>tests unitaires et d'intégration</strong> pour garantir la fiabilité des fonctionnalités.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
-      <article class="p-card reveal" data-cat="bancaire backend" style="--p-hue:244">
+      <article class="p-card reveal" id="project-bankerise" data-slug="bankerise" data-cat="bancaire backend" style="--p-hue:244">
         <figure class="p-visual">
           <div class="p-window" dir="ltr">
             <div class="p-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>Bankerise Corporate</span></div>
@@ -357,22 +375,33 @@
             <span class="p-index"><span data-i18n="projectLabel">Projet</span> 02</span>
             <span class="badge badge-live" data-i18n="p2Date">Déc 2024 — Présent</span>
           </div>
-          <h3 data-i18n="p2Title">Plateforme bancaire corporate Bankerise</h3>
+          <h3 class="p-title" id="p2-title" data-i18n="p2Title">Plateforme bancaire corporate Bankerise</h3>
           <p class="p-org">Proxym IT</p>
-          <ul class="bullets">
-            <li data-i18n-html="p2B1">Évolution d'une plateforme corporate en <strong>microservices orientés événements</strong>, suivant les principes <strong>CQRS</strong> et l'architecture hexagonale.</li>
-            <li data-i18n-html="p2B2">Adaptation de la solution issue de la plateforme Coris Corporate, aujourd'hui déployée pour <strong>Coris, BNA et BCRG</strong>.</li>
-            <li data-i18n-html="p2B3">Enrichissement du <strong>moteur de règles métier</strong> pour prendre en charge des configurations dynamiques propres à chaque institution.</li>
-            <li data-i18n-html="p2B4">Amélioration des performances des services Spring Boot par <strong>indexation Elasticsearch</strong> et <strong>cache Redis</strong>.</li>
-          </ul>
+          <p class="p-summary" data-i18n="p2Summary">Évolution d’une plateforme corporate en microservices orientés événements, déployée pour Coris, BNA et BCRG.</p>
           <div class="tags" dir="ltr">
             <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>Elasticsearch</span><span>Kubernetes</span><span>GitLab CI/CD</span><span>Keycloak</span><span>Redis</span><span>Docker</span><span>Firebase</span>
           </div>
-          <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+          <div class="p-foot">
+            <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+            <button class="p-open" type="button" aria-haspopup="dialog" aria-controls="projectDialog" aria-describedby="p2-title">
+              <span data-i18n="projectOpen">Voir le détail</span>
+              <svg class="ico-dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="p-details" hidden>
+            <p data-detail="role" data-i18n="p2Role">Développeuse Backend</p>
+            <p data-detail="context" data-i18n="p2Context">Issue de Coris Corporate, la plateforme Bankerise devait devenir un socle réutilisable par plusieurs banques : généraliser le modèle métier, rendre les règles configurables et tenir la charge.</p>
+            <ul class="bullets">
+              <li data-i18n-html="p2B1">Évolution d'une plateforme corporate en <strong>microservices orientés événements</strong>, suivant les principes <strong>CQRS</strong> et l'architecture hexagonale.</li>
+              <li data-i18n-html="p2B2">Adaptation de la solution issue de la plateforme Coris Corporate, aujourd'hui déployée pour <strong>Coris, BNA et BCRG</strong>.</li>
+              <li data-i18n-html="p2B3">Enrichissement du <strong>moteur de règles métier</strong> pour prendre en charge des configurations dynamiques propres à chaque institution.</li>
+              <li data-i18n-html="p2B4">Amélioration des performances des services Spring Boot par <strong>indexation Elasticsearch</strong> et <strong>cache Redis</strong>.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
-      <article class="p-card reveal" data-cat="backend" style="--p-hue:174">
+      <article class="p-card reveal" id="project-cbs-mock" data-slug="cbs-mock" data-cat="backend" style="--p-hue:174">
         <figure class="p-visual">
           <div class="p-window" dir="ltr">
             <div class="p-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>CBS Mock · API</span></div>
@@ -385,22 +414,33 @@
             <span class="p-index"><span data-i18n="projectLabel">Projet</span> 03</span>
             <span class="badge badge-live" data-i18n="p3Date">En cours</span>
           </div>
-          <h3 data-i18n="p3Title">CBS Mock — Simulateur de Core Banking System</h3>
+          <h3 class="p-title" id="p3-title" data-i18n="p3Title">CBS Mock — Simulateur de Core Banking System</h3>
           <p class="p-org">Proxym IT</p>
-          <ul class="bullets">
-            <li data-i18n-html="p3B1">Développement d'un <strong>simulateur interne de Core Banking System</strong> reproduisant les principaux comportements de <strong>Sopra Banking Platform</strong>.</li>
-            <li data-i18n-html="p3B2">Exposition d'<strong>API REST</strong> simulant les échanges avec le CBS, pour tester et développer sans dépendre des environnements externes.</li>
-            <li data-i18n-html="p3B3">Implémentation de scénarios couvrant la <strong>gestion des comptes</strong>, les <strong>transactions bancaires</strong> et les opérations liées aux données clients.</li>
-            <li data-i18n-html="p3B4">Conteneurisation <strong>Docker</strong> pour un déploiement simple dans tous les environnements.</li>
-          </ul>
+          <p class="p-summary" data-i18n="p3Summary">Simulateur interne de Core Banking System (Sopra) exposé en API REST, pour tester sans dépendre des environnements externes.</p>
           <div class="tags" dir="ltr">
             <span>Java</span><span>Spring Boot</span><span>API REST</span><span>PostgreSQL</span><span>Docker</span>
           </div>
-          <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+          <div class="p-foot">
+            <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+            <button class="p-open" type="button" aria-haspopup="dialog" aria-controls="projectDialog" aria-describedby="p3-title">
+              <span data-i18n="projectOpen">Voir le détail</span>
+              <svg class="ico-dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="p-details" hidden>
+            <p data-detail="role" data-i18n="p3Role">Développeuse Backend</p>
+            <p data-detail="context" data-i18n="p3Context">Les environnements de Core Banking System sont rares, longs à obtenir et partagés entre équipes. Un simulateur fidèle permet de développer, tester et démontrer les parcours bancaires en autonomie.</p>
+            <ul class="bullets">
+              <li data-i18n-html="p3B1">Développement d'un <strong>simulateur interne de Core Banking System</strong> reproduisant les principaux comportements de <strong>Sopra Banking Platform</strong>.</li>
+              <li data-i18n-html="p3B2">Exposition d'<strong>API REST</strong> simulant les échanges avec le CBS, pour tester et développer sans dépendre des environnements externes.</li>
+              <li data-i18n-html="p3B3">Implémentation de scénarios couvrant la <strong>gestion des comptes</strong>, les <strong>transactions bancaires</strong> et les opérations liées aux données clients.</li>
+              <li data-i18n-html="p3B4">Conteneurisation <strong>Docker</strong> pour un déploiement simple dans tous les environnements.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
-      <article class="p-card reveal" data-cat="bancaire backend" style="--p-hue:158">
+      <article class="p-card reveal" id="project-bna-h24" data-slug="bna-h24" data-cat="bancaire backend" style="--p-hue:158">
         <figure class="p-visual">
           <div class="p-window" dir="ltr">
             <div class="p-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>BNA H24</span></div>
@@ -413,22 +453,33 @@
             <span class="p-index"><span data-i18n="projectLabel">Projet</span> 04</span>
             <span class="badge" data-i18n="p4Date">Nov 2023 — Nov 2024</span>
           </div>
-          <h3 data-i18n="p4Title">Plateforme bancaire retail BNA H24</h3>
+          <h3 class="p-title" id="p4-title" data-i18n="p4Title">Plateforme bancaire retail BNA H24</h3>
           <p class="p-org">Proxym IT</p>
-          <ul class="bullets">
-            <li data-i18n-html="p4B1">Développement d'une <strong>solution bancaire digitale web et mobile</strong> basée sur la plateforme Bankerise, destinée aux clients de la BNA.</li>
-            <li data-i18n-html="p4B2">Fonctionnalités <strong>back-office</strong> : gestion des comptes, suivi des transactions, administration des agences et des DAB.</li>
-            <li data-i18n-html="p4B3">Conception et intégration d'<strong>API REST</strong> entre les applications digitales et les systèmes bancaires cœur, avec opérations <strong>temps réel</strong>.</li>
-            <li data-i18n-html="p4B4">Développement d'un <strong>portail CSA</strong> pour les agents bancaires et parcours d'intégration client avec règles de validation métier.</li>
-          </ul>
+          <p class="p-summary" data-i18n="p4Summary">Banque digitale web et mobile pour les clients de la BNA : back-office, API temps réel et portail agents.</p>
           <div class="tags" dir="ltr">
             <span>Java</span><span>Spring Boot</span><span>API REST</span><span>PostgreSQL</span><span>Docker</span><span>CI/CD</span>
           </div>
-          <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+          <div class="p-foot">
+            <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+            <button class="p-open" type="button" aria-haspopup="dialog" aria-controls="projectDialog" aria-describedby="p4-title">
+              <span data-i18n="projectOpen">Voir le détail</span>
+              <svg class="ico-dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="p-details" hidden>
+            <p data-detail="role" data-i18n="p4Role">Développeuse Backend</p>
+            <p data-detail="context" data-i18n="p4Context">La BNA voulait offrir à ses clients une banque accessible 24 h/24, reliée en temps réel à ses systèmes cœur, tout en outillant ses agents pour l'accompagnement et l'intégration des clients.</p>
+            <ul class="bullets">
+              <li data-i18n-html="p4B1">Développement d'une <strong>solution bancaire digitale web et mobile</strong> basée sur la plateforme Bankerise, destinée aux clients de la BNA.</li>
+              <li data-i18n-html="p4B2">Fonctionnalités <strong>back-office</strong> : gestion des comptes, suivi des transactions, administration des agences et des DAB.</li>
+              <li data-i18n-html="p4B3">Conception et intégration d'<strong>API REST</strong> entre les applications digitales et les systèmes bancaires cœur, avec opérations <strong>temps réel</strong>.</li>
+              <li data-i18n-html="p4B4">Développement d'un <strong>portail CSA</strong> pour les agents bancaires et parcours d'intégration client avec règles de validation métier.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
-      <article class="p-card reveal" data-cat="erp" style="--p-hue:330">
+      <article class="p-card reveal" id="project-allsystems" data-slug="allsystems" data-cat="erp" style="--p-hue:330">
         <figure class="p-visual">
           <div class="p-window" dir="ltr">
             <div class="p-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>AllSystems ERP</span></div>
@@ -441,18 +492,29 @@
             <span class="p-index"><span data-i18n="projectLabel">Projet</span> 05</span>
             <span class="badge" data-i18n="p5Date">Fév 2023 — Juin 2023</span>
           </div>
-          <h3 data-i18n="p5Title">Module ERP AllSystems</h3>
+          <h3 class="p-title" id="p5-title" data-i18n="p5Title">Module ERP AllSystems</h3>
           <p class="p-org">For Right Solution</p>
-          <ul class="bullets">
-            <li data-i18n-html="p5B1">Conception d'un <strong>module ERP</strong> pour la gestion des ressources de production avec le framework <strong>Laravel</strong>.</li>
-            <li data-i18n-html="p5B2">Construction d'un système de gestion <strong>RH et production</strong> avec workflows automatisés.</li>
-            <li data-i18n-html="p5B3">Implémentation de <strong>tableaux de bord interactifs</strong> pour l'optimisation de la planification de production.</li>
-            <li data-i18n-html="p5B4">Développement d'<strong>API RESTful</strong> avec optimisation de la base de données pour le <strong>reporting temps réel</strong>.</li>
-          </ul>
+          <p class="p-summary" data-i18n="p5Summary">Module ERP Laravel pour piloter RH et production, avec workflows automatisés et tableaux de bord temps réel.</p>
           <div class="tags" dir="ltr">
             <span>PHP</span><span>Laravel</span><span>SQL Server</span><span>JavaScript</span><span>API RESTful</span><span>UML</span>
           </div>
-          <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+          <div class="p-foot">
+            <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+            <button class="p-open" type="button" aria-haspopup="dialog" aria-controls="projectDialog" aria-describedby="p5-title">
+              <span data-i18n="projectOpen">Voir le détail</span>
+              <svg class="ico-dir" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h13"/><path d="M12 5.5l6.5 6.5-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="p-details" hidden>
+            <p data-detail="role" data-i18n="p5Role">Développeuse Full Stack</p>
+            <p data-detail="context" data-i18n="p5Context">Une entreprise industrielle suivait sa production et ses ressources humaines dans des outils dispersés. Le module centralise ces données pour planifier la production et produire un reporting fiable.</p>
+            <ul class="bullets">
+              <li data-i18n-html="p5B1">Conception d'un <strong>module ERP</strong> pour la gestion des ressources de production avec le framework <strong>Laravel</strong>.</li>
+              <li data-i18n-html="p5B2">Construction d'un système de gestion <strong>RH et production</strong> avec workflows automatisés.</li>
+              <li data-i18n-html="p5B3">Implémentation de <strong>tableaux de bord interactifs</strong> pour l'optimisation de la planification de production.</li>
+              <li data-i18n-html="p5B4">Développement d'<strong>API RESTful</strong> avec optimisation de la base de données pour le <strong>reporting temps réel</strong>.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
@@ -627,15 +689,89 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p>© <span id="year">2026</span> <span data-i18n="footerText">Asma Ajmi — Ingénieure Logiciel Full Stack</span></p>
+    <p class="footer-hint"><kbd class="kbd-shortcut" aria-hidden="true">Ctrl K</kbd> <span data-i18n="footerHint">pour tout parcourir au clavier</span></p>
     <p class="footer-stack" dir="ltr">Java · Spring Boot · Angular · PHP · DDD · CQRS</p>
   </div>
 </footer>
+
+<!-- ============ DÉTAIL PROJET ============ -->
+<dialog class="p-dialog" id="projectDialog" aria-labelledby="pdTitle">
+  <div class="pd-shell">
+    <header class="pd-top">
+      <span class="pd-counter" id="pdCounter" aria-live="polite"></span>
+      <div class="pd-nav">
+        <button class="icon-btn" id="pdPrev" type="button" data-i18n-attr="aria-label:projectPrev;title:projectPrev" aria-label="Projet précédent">
+          <svg class="ico-dir" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg>
+        </button>
+        <button class="icon-btn" id="pdNext" type="button" data-i18n-attr="aria-label:projectNext;title:projectNext" aria-label="Projet suivant">
+          <svg class="ico-dir" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg>
+        </button>
+        <button class="icon-btn" id="pdClose" type="button" data-i18n-attr="aria-label:projectClose;title:projectClose" aria-label="Fermer">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="pd-body" id="pdBody">
+      <div class="pd-visual" id="pdVisual"></div>
+      <div class="pd-content">
+        <div class="pd-head">
+          <p class="pd-kicker" id="pdIndex"></p>
+          <h2 id="pdTitle"></h2>
+        </div>
+        <dl class="pd-meta">
+          <div><dt data-i18n="projectRoleLabel">Rôle</dt><dd id="pdRole"></dd></div>
+          <div><dt data-i18n="projectCompanyLabel">Entreprise</dt><dd id="pdCompany"></dd></div>
+          <div><dt data-i18n="projectPeriodLabel">Période</dt><dd id="pdPeriod"></dd></div>
+        </dl>
+        <section class="pd-section" aria-labelledby="pdContextTitle">
+          <h3 id="pdContextTitle" data-i18n="projectContextLabel">Contexte</h3>
+          <p id="pdContext"></p>
+        </section>
+        <section class="pd-section" aria-labelledby="pdWorkTitle">
+          <h3 id="pdWorkTitle" data-i18n="projectWorkLabel">Ce que j'ai réalisé</h3>
+          <ul class="bullets" id="pdWork"></ul>
+        </section>
+        <section class="pd-section" aria-labelledby="pdStackTitle">
+          <h3 id="pdStackTitle" data-i18n="projectStackLabel">Stack technique</h3>
+          <div class="tags" id="pdStack" dir="ltr"></div>
+        </section>
+      </div>
+    </div>
+    <footer class="pd-foot">
+      <p class="p-note"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> <span data-i18n="projectPrivate">Projet client — code et démo non publics</span></p>
+      <button class="btn btn-primary btn-sm" id="pdAsk" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3l1.8 4.9L19 9.7l-5.2 1.8L12 16.5l-1.8-5L5 9.7l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+        <span data-i18n="projectAsk">Demander à l'assistant</span>
+      </button>
+    </footer>
+  </div>
+</dialog>
+
+<!-- ============ PALETTE DE COMMANDES ============ -->
+<dialog class="cmdk" id="cmdk" data-i18n-attr="aria-label:cmdLabel" aria-label="Palette de commandes">
+  <div class="cmdk-box">
+    <div class="cmdk-search">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>
+      <input id="cmdkInput" type="text" role="combobox" aria-expanded="true" aria-controls="cmdkList" aria-autocomplete="list" autocomplete="off" spellcheck="false" dir="auto"
+             data-i18n="cmdPlaceholder" data-i18n-attr="aria-label:cmdPlaceholder" placeholder="Rechercher une section, un projet, une action…" aria-label="Rechercher une section, un projet, une action…" />
+      <kbd aria-hidden="true">Esc</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdkList" role="listbox" data-i18n-attr="aria-label:cmdLabel" aria-label="Palette de commandes"></ul>
+    <footer class="cmdk-foot" aria-hidden="true">
+      <span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="cmdHintNavigate">naviguer</span></span>
+      <span><kbd>↵</kbd> <span data-i18n="cmdHintSelect">valider</span></span>
+      <span><kbd>Esc</kbd> <span data-i18n="cmdHintClose">fermer</span></span>
+    </footer>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ============ CHATBOT ============ -->
 <div class="chatbot" id="chatbot">
   <section class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
     <header class="chat-header">
-      <span class="chat-avatar" aria-hidden="true">AA</span>
+      <span class="chat-avatar" aria-hidden="true">a</span>
       <div class="chat-heading">
         <h2 id="chatTitle" data-i18n="chatTitle">Assistant d’Asma</h2>
         <p class="chat-status" id="chatStatus"><span class="status-dot" aria-hidden="true"></span><span id="chatStatusText" data-i18n="chatStatusOnline">IA · répond sur mon parcours</span></p>
